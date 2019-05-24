@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <title>Foire du valais simulator</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../styles.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="../common.js"></script>
+    <script src="foireduvalaissimu.js"></script>
+	
+</head>
+<body>
+
+<header class="main-header">
+    <a href="../accueil/description_start.html"><h1>Foire du valais simulator</h1></a>
+</header>
+
+<div class="main-wrapper">
+    <canvas id="demo" width="512" height="512" ondrop="drop(event)" ondragover="allowDrop(event)"></canvas>
+    <img id="gameover" src="../assets/fdv.jpg" width="512" height="512"></canvas>
+    <div class="infos">
+        <h1 id="score">Score :</h1>
+	   <h1 id="tauxAlcool">Taux d'alcoolémie :</h1>
+	   <h1 id="heureActuel">Heure actuelle :</h1>
+        <h1 id="vessie">Argent restant :</h1>
+        <img id="play" src='../music/play.png' onclick='playAudio()' width="50" height="50">
+        <img id="pause" src='../music/pause.png' display="none" onclick='pauseAudio()' width="50" height="50">
+    </div>
+   
+    <table class="highscore" id="tableauScore">
+		<form>
+			<tr>
+				<td><input type="text" id="nom" placeholder="Entrez votre nom" disabled /><input type="hidden" id="scoreFinal" /></td>
+				<td><input type="submit" id="sauvegarder" onclick="saveUserScore()" value="Enregistrer mon score" disabled /></td>
+			</tr>
+		</form>
+		<tr>
+			<td>Utilisateur</td>
+			<td>Score</td>
+		</tr>
+    </table>    
+	
+    <div class="map">
+		<h1>Localisation de la Foire du Valais</h1>		
+		<input type="submit" onclick="getMyLocationbyId()" value="Ma localisation"/>
+		<iframe id="bingMaps" width="500" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=500&cp=46.0982295032256~7.071403478579228&lvl=15&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no"></iframe>
+	</div>   
+    
+    <a class="button" href="../regle.html"><button class="regle">Règle du jeux</button></a>
+    
+</div>
+<img id="dragburger" src="../assets/eveFemme.png" draggable="true" ondragstart="drag(event)" />
+</body>
+<script>
+point = 0;
+</script>
+</html>

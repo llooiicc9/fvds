@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,400i,700|Roboto+Slab:700');
+
+.mySlides {display:none;}
+
+
+.item3 { grid-area: main; }
+.item4 { 
+	grid-area: right; 
+	 box-shadow: 1px 1px 12px #555;
+	 /*padding-right: 10px;*/
+	 margin-right:10px;
+	 height:100px;
+}
+
+.item4 h3 { 
+	background-color :#e16532;
+	color: white;
+	padding-left:10px;	
+	font-size: 16px;
+}
+
+.item4 ul { 
+	list-style-type: none;
+	padding-right: 30px;
+	
+}
+
+.item5 { grid-area: footer; }
+
+.hamburger{
+	display:none;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'footer footer footer footer footer footer';
+  grid-gap: 10px;
+}
+
+* {
+    box-sizing: border-box;
+	margin: 0;
+}
+
+
+header.tete{
+    /*background-image: linear-gradient(white, #ff4000 70px);*/
+	background: linear-gradient(white,20%, #ff4000);
+	
+}
+
+table
+{
+	width:100%;
+}
+
+
+footer
+{
+	text-align: center;
+	background-color: #333;
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+article > header{
+padding-bottom:20px;
+}
+
+article > header > p{
+text-align:right;
+}
+
+h1
+{
+	text-align:center;
+	padding-top: 40px;
+	color: white;
+	font-size: 24px;
+	height:80px;
+	border-bottom: 20px solid #dc5224;
+}
+
+h2
+{
+	/*text-decoration: underline;*/
+	border-bottom:0.2px solid black;
+	
+	font-weight: bold;
+	
+}
+
+a{
+	color:#ff4000;
+	text-decoration: none;
+}
+article > p{
+	padding-bottom:10px;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {
+	background-color: #ffffff;
+	color: #ff8000;
+	}
+
+ul.topnav li.right {float: right;}
+
+/* Pour les natels en orientation vertical */
+@media screen and (max-width: 500px) {
+    ul.topnav li.right, 
+    ul.topnav li {
+		float: none;
+	}
+
+	h1{
+		height:150px;
+	}
+
+	.item4{
+		display:none;
+	}
+
+	footer{
+		position:static;
+	}
+
+	.hamburger{
+		display:inherit;
+		text-align:center;
+	}
+	
+}
+
+/* Pour les natels en orientation horizontale */
+@media screen and (max-width: 850px) and (min-width: 500px) {
+  footer{
+		position:static;
+	}
+}
+
